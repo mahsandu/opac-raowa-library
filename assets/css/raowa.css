@@ -1,0 +1,34 @@
+/* RAOWA Colors from Logo 
+    Red: #ff0000;
+    Blue: #1b0069;
+    Teal: #359fac;
+    Yellow: #ffb621;
+    cyan: #e5e5e5;
+*/
+
+
+/* CSS HEX */
+--woodsmoke: #121313; /* black */
+--swirl: #d2ccc6;
+--shiraz: #ff0000;  /* red */
+--kabul: #e5e5e5; /* shadow */
+--buttercup: #e5e5e5;
+--santa-fe: #b6725e;
+--mountbatten-pink: #a58898;
+--astral: #32739b;
+--curious-blue: #1b0069;
+
+#facetcontainer {
+    background-color:#d2ccc6 ;
+}
+.no-image, li .addrecord {
+    display: none;
+}
+.breadcrumbs {
+    background-color: #1b0069;
+
+}
+.breadcrumbs a {
+    color: #d2ccc6;
+
+}
