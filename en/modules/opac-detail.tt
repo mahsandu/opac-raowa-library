@@ -60,6 +60,7 @@
             <div class="col-lg-9">
                 <div id="catalogue_detail_biblio" class="maincontent bg-light p-2" data-biblionumber="[% biblio.biblionumber | html %]">
                     <div class="row">
+                    
                         <div class="col-lg-2">
                             <div class="bookcover">
 
@@ -152,6 +153,7 @@
 
                             </div><!-- / .bookcover -->
                         </div>
+
                         <div class="col-lg-10">
                             <abbr class="unapi-id" title="koha:biblionumber:[% biblio.biblionumber | html %]"><!-- unAPI --></abbr>
                             [% IF ( ocoins ) # COinS / Openurl %]

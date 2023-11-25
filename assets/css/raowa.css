@@ -32,3 +32,19 @@
     color: #d2ccc6;
 
 }
+.record {
+    padding: calc(0.5em + 0.5vw);
+    font-size: inherit;
+    color: #1b0069;
+}
+.record p {
+    margin-bottom: 0;
+}
+
+.h1, h1 {
+    color: #1b0069;
+    font-size: calc(1.1em + 1.1vw);
+} 
+.h3, h3 {
+    font-size: inherit;
+}
