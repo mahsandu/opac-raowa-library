@@ -35,12 +35,12 @@
 [% Asset.js("lib/jquery/jquery-migrate-3.1.0.min.js") | $raw %]
 [% Asset.js("lib/jquery/jquery-ui-1.12.1.min.js") | $raw %]
   <!-- Vendor JS Files -->
- <!-- [% Asset.js("assets/vendor/bootstrap/js/bootstrap.bundle.min.js") | $raw %] -->
-  [% Asset.js("assets/vendor/purecounter/purecounter_vanilla.js") | $raw %]
-  [% Asset.js("assets/vendor/glightbox/js/glightbox.min.js") | $raw %]
-  [% Asset.js("assets/vendor/swiper/swiper-bundle.min.js") | $raw %]
-  [% Asset.js("assets/vendor/aos/aos.js") | $raw %]
-  [% Asset.js("assets/vendor/php-email-form/validate.js") | $raw %]
+  [% Asset.js("assets/vendor/bootstrap/js/bootstrap.bundle.min.js") | $raw %] 
+ <!-- [% Asset.js("assets/vendor/purecounter/purecounter_vanilla.js") | $raw %] -->
+ <!-- [% Asset.js("assets/vendor/glightbox/js/glightbox.min.js") | $raw %] -->
+<!--  [% Asset.js("assets/vendor/swiper/swiper-bundle.min.js") | $raw %] -->
+<!--  [% Asset.js("assets/vendor/aos/aos.js") | $raw %] -->
+ <!-- [% Asset.js("assets/vendor/php-email-form/validate.js") | $raw %] -->
 
   <!-- Template Main JS File -->
   [% Asset.js("assets/js/main.js") | $raw %]
@@ -51,7 +51,7 @@ $.widget.bridge('uitooltip', $.ui.tooltip);
 </script>
 <!-- [% Asset.js("lib/fontfaceobserver.min.js") | $raw %] -->
 
-
+<!--
 <script>
     Modernizr.load([
         // Test need for polyfill
@@ -67,6 +67,7 @@ $.widget.bridge('uitooltip', $.ui.tooltip);
     // Fix for datepicker in a modal
     $.fn.modal.Constructor.prototype.enforceFocus = function () {};
 </script>
+-->
 [% IF ( OPACAmazonCoverImages || SyndeticsCoverImages ) %]
 <script>
         var NO_AMAZON_IMAGE = _("No cover image available");

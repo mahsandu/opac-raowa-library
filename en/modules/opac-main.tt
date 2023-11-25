@@ -47,17 +47,17 @@
     <div class="container">
       <div class="row gy-4 d-flex justify-content-between">
         <div class="col-lg-12 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h2 data-aos="fade-up">[% LibraryNameTitle | html %]</h2>
-          <p data-aos="fade-up" data-aos-delay="100">Honorable Members of RAOWA has access to all resources. Please search your desired reading resources from the box below. </p>
+          <h2>[% LibraryNameTitle | html %]</h2>
+          <p>Honorable Members of RAOWA has access to all resources. Please search your desired reading resources from the box below. </p>
 
-          <form action="[% Koha.Preference ('OPACBaseURL') %]/cgi-bin/koha/opac-search.pl?" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200" id="searchform" method="get" name="searchform">
+          <form action="[% Koha.Preference ('OPACBaseURL') %]/cgi-bin/koha/opac-search.pl?" class="form-search d-flex align-items-stretch mb-3" id="searchform" method="get" name="searchform">
             <input type="text" class="form-control" placeholder="Keyword to Search" id="transl1" name="q">
             <button type="submit" class="btn btn-primary">Search</button>
           </form>
 
         </div>
 
- <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
+ <div class="col-lg-5 order-1 order-lg-2 hero-img">
           <img src="assets/img/hero-img.svg" class="img-fluid mb-3 mb-lg-0" alt="">
           <a href="/cgi-bin/koha/opac-search.pl" class="btn btn-light-outline text-light"> Advance Search </a>
         </div>
