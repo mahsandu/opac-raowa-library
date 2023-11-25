@@ -60,11 +60,13 @@
             <div class="col-lg-9">
                 <div id="catalogue_detail_biblio" class="maincontent bg-light p-2" data-biblionumber="[% biblio.biblionumber | html %]">
                     <div class="row">
-                    
+
                         <div class="col-lg-2">
                             <div class="bookcover">
 
                                 <div id="biblio-cover-slider" class="cover-slider">
+                                    [% SET hasCoverImage = 0 %]
+
                                     [% IF ( OPACLocalCoverImages ) %]
                                         [% IF localimages.count %]
                                             [% FOREACH image IN localimages %]
@@ -73,6 +75,7 @@
                                                         <img class="img-thumbnail rounded-1"  src="/cgi-bin/koha/opac-image.pl?thumbnail=1&amp;imagenumber=[% image.imagenumber | uri %]" alt="Local cover image" data-link="/cgi-bin/koha/opac-imageviewer.pl?biblionumber=[% biblionumber | uri %]&amp;imagenumber=[% image.imagenumber | uri %]" />
                                                     </a>
                                                     <div class="hint">Local cover image</div>
+                                                    [% SET hasCoverImage = 1 %]
                                                 </div>
                                             [% END %]
                                         [% END %]
@@ -84,6 +87,7 @@
                                                 <img class="img-thumbnail rounded-1"  src="https://images-na.ssl-images-amazon.com/images/P/[% normalized_isbn | uri %].01.MZZZZZZZ.jpg" alt="Amazon cover image" data-link="http://www.amazon[% AmazonTld | uri %]/gp/reader/[% normalized_isbn | uri %][% AmazonAssocTag | uri %]#reader-link"/>
                                             </a>
                                             <div class="hint">Image from Amazon.com</div>
+                                            [% SET hasCoverImage = 1 %]
                                         </div>
                                     [% END %]
 
@@ -94,6 +98,7 @@
                                                     <img class="img-thumbnail rounded-1"  src="https://secure.syndetics.com/index.aspx?isbn=[% normalized_isbn | uri %]/[% SyndeticsCoverImageSize | uri %].GIF&amp;amp;client=[% SyndeticsClientCode | uri %]&amp;type=xw10&amp;upc=[% normalized_upc | uri %]&amp;oclc=[% normalized_oclc | uri %]" alt="Syndetics cover image" />
                                                 </a>
                                                 <div class="hint">Image from Syndetics</div>
+                                                [% SET hasCoverImage = 1 %]
                                             </div>
                                         [% END %]
                                     [% END %]
@@ -102,6 +107,7 @@
                                         <div class="cover-image" id="googlejacket-coverimg">
                                             <div title="[% img_title | html %]" class="[% normalized_isbn | html %]" id="gbs-thumbnail-preview" data-use-data-link="1"></div>
                                             <div class="hint">Image from Google Jackets</div>
+                                            [% SET hasCoverImage = 1 %]
                                         </div>
                                     [% END %]
 
@@ -112,6 +118,7 @@
                                                 <a title="Image from Coce" class="[% coce_id | html %]" id="coce-thumbnail-preview"></a>
                                             [% END %]
                                             <div class="hint">Image from Coce</div>
+                                            [% SET hasCoverImage = 1 %]
                                         </div>
                                     [% END %]
 
@@ -119,6 +126,7 @@
                                         <div class="cover-image" id="openlibrary-coverimg">
                                             <div title="[% img_title | html %]" class="[% normalized_isbn | html %]" id="openlibrary-thumbnail-preview" data-use-data-link="1"></div>
                                             <div class="hint">Image from OpenLibrary</div>
+                                            [% SET hasCoverImage = 1 %]
                                         </div>
                                     [% END %]
 
@@ -135,6 +143,7 @@
                                                 </a>
                                             [% END %]
                                             <div class="hint">Image from Baker &amp; Taylor</div>
+                                            [% SET hasCoverImage = 1 %]
                                         </div>
                                     [% END %]
 
@@ -145,9 +154,18 @@
                                                 <a class="custom_cover_image" href="[% custom_cover_image_url | url %]" title="Custom cover image">
                                                     <img class="img-thumbnail rounded-1"  id="custom-img" alt="Custom cover image" src="[% custom_cover_image_url | url %]" />
                                                 </a>
-                                                <div class="hint">Custom cover image</div>
+                                                <div class="hint">Cover image</div>
+                                                [% SET hasCoverImage = 1 %]
                                             </div>
                                         [% END %]
+                                    [% END %]
+
+                                    [% IF (hasCoverImage == 0) %]
+                                        <!-- Default cover image if no other image is available -->
+                                        <div class="cover-image default-coverimg">
+                                            <img class="img-thumbnail rounded-1" src="/opac-tmpl/OPAC-RAOWA/assets/img/noimage.png" alt="Default cover image" />
+                                            <div class="hint">Default cover image</div>
+                                        </div>
                                     [% END %]
                                 </div> <!-- /.cover-slider -->
 
